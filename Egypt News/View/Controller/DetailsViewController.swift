@@ -35,9 +35,8 @@ class DetailsViewController: UIViewController {
         
         
         let image_url = URL(string: "\(article.urlToImage ?? "")".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
-        
+        imageDetails.kf.indicatorType = .activity
         if article.urlToImage != nil{
-            imageDetails.kf.indicatorType = .activity
             imageDetails.kf.setImage(with: image_url)
         }else{
             imageDetails.image = UIImage(named: "No image")

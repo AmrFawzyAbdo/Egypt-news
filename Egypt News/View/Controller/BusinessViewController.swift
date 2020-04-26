@@ -95,9 +95,8 @@ class BusinessViewController: UIViewController , UICollectionViewDelegate , UICo
         cell.newsTitle.text = business[indexPath.row].title
         
         let imagePath = URL(string: "\(business[indexPath.row].urlToImage ?? "")".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
-        
+        cell.newsImage.kf.indicatorType = .activity
         if business[indexPath.row].urlToImage != nil{
-            cell.newsImage.kf.indicatorType = .activity
             cell.newsImage.kf.setImage(with: imagePath)
         }else{
             cell.newsImage.image = UIImage(named: "No image")

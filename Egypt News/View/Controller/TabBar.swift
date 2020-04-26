@@ -25,7 +25,7 @@ class TabBar: UITabBarController {
         
         
         self.tabBar.isTranslucent = true
-        self.tabBar.alpha = 1
+        self.tabBar.alpha = 5
         self.tabBar.backgroundColor = UIColor.clear.withAlphaComponent(0.0)
         self.tabBar.layer.backgroundColor = UIColor.clear.withAlphaComponent(0.0).cgColor
         self.tabBar.backgroundImage = nil

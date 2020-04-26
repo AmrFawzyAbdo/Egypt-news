@@ -96,9 +96,8 @@ class HealthViewController: UIViewController , UICollectionViewDataSource , UICo
         cell.newsTitle.text = healthNews[indexPath.row].title
         
         let imagePath = URL(string: "\(healthNews[indexPath.row].urlToImage ?? "")".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
-        
+        cell.newsImage.kf.indicatorType = .activity
         if healthNews[indexPath.row].urlToImage != nil{
-            cell.newsImage.kf.indicatorType = .activity
             cell.newsImage.kf.setImage(with: imagePath)
         }else{
             cell.newsImage.image = UIImage(named: "No image")

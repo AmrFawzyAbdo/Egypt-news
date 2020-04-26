@@ -112,9 +112,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             
         let imagePath = URL(string: "\(news[indexPath.row].urlToImage ?? "")".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
         print(imagePath ?? "")
-
-        if news[indexPath.row].urlToImage != nil{
         cell.newsImage.kf.indicatorType = .activity
+        if news[indexPath.row].urlToImage != nil{
         cell.newsImage.kf.setImage(with: imagePath)
         }else{
             cell.newsImage.image = UIImage(named: "No image")
