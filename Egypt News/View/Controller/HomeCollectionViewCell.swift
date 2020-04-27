@@ -9,6 +9,8 @@
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: Outlets of the cell
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsTitle: UILabel!
     @IBOutlet weak var sepaateLine: UIView!
