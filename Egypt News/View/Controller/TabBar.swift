@@ -10,11 +10,11 @@ import UIKit
 
 class TabBar: UITabBarController {
 
-    // MARK: Outlets
+    // MARK: -  Outlets
 
     @IBOutlet weak var tab: UITabBar!
     
-    // MARK: ViewDidLoad method ,happens first time View appear
+    // MARK: -  ViewDidLoad method ,happens first time View appear
 
     override func viewDidLoad() {
         super.viewDidLoad()

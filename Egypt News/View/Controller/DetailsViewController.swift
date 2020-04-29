@@ -21,7 +21,7 @@ class DetailsViewController: UIViewController {
     //MARK: - Variables and constants
     var article : Article!
     
-    // MARK: ViewDidLoad method ,happens first time View appears
+    // MARK: - ViewDidLoad method ,happens first time View appears
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -11,7 +11,7 @@ import Kingfisher
 
 class HealthViewController: UIViewController , UICollectionViewDataSource , UICollectionViewDelegate  {
     
-    // MARK: Outlets
+    // MARK: -  Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - Variables and constants
@@ -20,7 +20,7 @@ class HealthViewController: UIViewController , UICollectionViewDataSource , UICo
     /// Refresh control
     let refreshController = UIRefreshControl()
 
-    // MARK: ViewDidLoad method ,happens first time View appears
+    // MARK: -  ViewDidLoad method ,happens first time View appears
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +49,7 @@ class HealthViewController: UIViewController , UICollectionViewDataSource , UICo
     }
     
     
-    // MARK: viewWillAppear method , called every time view appears
+    // MARK: -  viewWillAppear method , called every time view appears
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -81,7 +81,7 @@ class HealthViewController: UIViewController , UICollectionViewDataSource , UICo
     }
     
     
-    // MARK: What happens when calling did pull to refresh
+    // MARK: -  What happens when calling did pull to refresh
     // MARK: didPullToRefresh
     @objc private func didPullToRefresh(_ sender: Any){
         /* Do you your api calls in here, and then asynchronously remember to stop the
@@ -110,13 +110,13 @@ class HealthViewController: UIViewController , UICollectionViewDataSource , UICo
     }
     
     
-    // MARK: Used to define number of items per section
+    // MARK: -  Used to define number of items per section
     /// - Returns: number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return healthNews.count
     }
     
-    // MARK: Declaration of each cell
+    // MARK: -  Declaration of each cell
     /// - Returns: cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
@@ -149,7 +149,7 @@ class HealthViewController: UIViewController , UICollectionViewDataSource , UICo
     }
     
     
-    // MARK: do an action while pressing on the cell
+    // MARK: -  do an action while pressing on the cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
@@ -166,7 +166,7 @@ class HealthViewController: UIViewController , UICollectionViewDataSource , UICo
 
 
 
-// MARK: define width and height of cells
+// MARK: -  define width and height of cells
 extension HealthViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width

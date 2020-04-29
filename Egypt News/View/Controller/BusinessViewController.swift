@@ -16,14 +16,13 @@ class BusinessViewController: UIViewController , UICollectionViewDelegate , UICo
     /// Refresh control
     let refreshController = UIRefreshControl()
     
-    // MARK: Outlets
+    // MARK: -  Outlets
     @IBOutlet weak var collection: UICollectionView!
     
-    // MARK: ViewDidLoad method ,happens first time View appears
+    // MARK: -  ViewDidLoad method ,happens first time View appears
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK: ViewDidLoad method ,happens first time View appears
         collection.delegate = self
         collection.dataSource = self
         
@@ -46,14 +45,14 @@ class BusinessViewController: UIViewController , UICollectionViewDelegate , UICo
     }
 
     
-    // MARK: viewWillAppear method , called every time view appears
+    // MARK: -  viewWillAppear method , called every time view appears
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         /// calling an api to get news
         getBusiness()
     }
     
-    // MARK: A method to get news
+    // MARK: -  A method to get news
     func getBusiness(){
         /// show loading indecator
         showHUD()
@@ -77,7 +76,7 @@ class BusinessViewController: UIViewController , UICollectionViewDelegate , UICo
     }
     
     
-    // MARK: What happens when calling did pull to refresh
+    // MARK: -  What happens when calling did pull to refresh
     // MARK: didPullToRefresh
     @objc private func didPullToRefresh(_ sender: Any){
         
@@ -105,13 +104,13 @@ class BusinessViewController: UIViewController , UICollectionViewDelegate , UICo
     }
     
     
-    // MARK: Used to define number of items per section
+    // MARK: -  Used to define number of items per section
     /// - Returns: number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return business.count
     }
     
-    // MARK: Declaration of each cell
+    // MARK: -  Declaration of each cell
     /// - Returns: cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collection.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as! HomeCollectionViewCell
@@ -142,7 +141,7 @@ class BusinessViewController: UIViewController , UICollectionViewDelegate , UICo
         return cell
     }
 
-    // MARK: do an action while pressing on the cell
+    // MARK: -  do an action while pressing on the cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
@@ -155,7 +154,7 @@ class BusinessViewController: UIViewController , UICollectionViewDelegate , UICo
 
 }
 
-// MARK: define width and height of cells
+// MARK: -  define width and height of cells
 extension BusinessViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
